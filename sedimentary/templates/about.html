@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<section class="row">
+  <h2 class="channel_title">Our Team</h2>
+  <div class="bio small-12 medium-4 columns">
+    <div class="bio-wrap">
+      <div class="focal-point up-3 right-2"><div><img src="{% static 'img/bio_placeholder.gif' %}" /></div></div>
+      <div class="bio-text-wrap">
+        <div class="bio-text">
+          <div class="bio-name">Keith Collins II</div>
+          <div class="bio-title">Creative Content Director</div>
+        </div>
+        <div class="bio-bio-text">
+          Since a child, Keith Collins had a big imagination and knew he wanted to be in film. Being in martial arts all his life, Keith would make fight scenes and film them all throughout junior high and high school. When Keith went to college, he decided to do more than just fights and make full films. Keith has over ten year experience in filmmaking and has earned many awards.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bio small-12 medium-4 columns">
+    <div class="bio-wrap">
+      <div class="focal-point up-3 right-2"><div><img src="{% static 'img/bio_placeholder.gif' %}" /></div></div>
+      <div class="bio-text-wrap">
+        <div class="bio-text">
+          <div class="bio-name">David Thomas</div>
+          <div class="bio-title">Technical Director</div>
+        </div>
+        <div class="bio-bio-text">
+          Dabbling with computers since he was 12, David has grown to love (and hate) all things tech. When he's not knee-deep in a text editor, he can also be found assisting on the set of 3DRS shorts or performing sound editing magic. He also built this amazingly-awesome website.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="row history">
+  <br /><br />
+  <h2 class="channel_title">Our History</h2>
+  <p>3 Digital Rock Studios was started in 2010 by 2 Kent State University Graduates Darius Peterson, Keith Collins and Keith’s brother William Collins. They started off a multimedia studio taking on video, photography, graphic and web design projects.</p>
+
+  <p>In 2012, David Thomas joined the group and 3 Digital Rock’s focus began to shift into indie filmmaking. In the course of two years 3 Digital Rock Studios would win many awards and selections for its short/micro Action, Horror films. Continuing into the world of indie film, members of 3 Digital Rock would help other production in stunts and fight coordination, but as a team they wanted to help indie filmmakers more than that.</p>
+
+  <p>In 2014, 3 Digital Rock Studios would take a bigger step in helping filmmakers by using their talents and becoming a web network for indie genre filmmakers and music artists to showcase their works.</p>
+</section>
+{% endblock %}

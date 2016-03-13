@@ -1,0 +1,221 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{pageTitle}}</title>
+    <meta property="fb:app_id" content="314389411912525" />
+    <meta property="og:title" content="{{pageTitle}}" />
+    <meta property="og:site_name" content="3 Digital Rock Studios" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{% static 'img/logo.png' %}" />
+    <meta name="google-site-verification" content="ONZwxDf3yLk5A2wOnh-E_qZQnNQFFWN9eYHC1WXYKxw" />
+    <link href="//vjs.zencdn.net/4.9.0/video-js.css" rel="stylesheet">
+
+    {% load compress %}{% compress css %}
+    <link href="{% static 'css/imports.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'slick-carousel/slick/slick.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'css/foundation.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'responsive-nav/responsive-nav.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'css/sedimentary.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'css/focal-point.min.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    {% endcompress %}
+
+    {% load compress %}{% compress css %}
+    <link href="{% static 'css/video-js.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'css/video-js-resolutions.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'css/video-js-sedimentary.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="{% static 'videojs-sharetools/videojs.sharetools.css' %}" rel="stylesheet" type="text/css" charset="utf-8" />
+    {% endcompress %}
+
+    {% block header %}{% endblock %}
+    <script src="{% static 'js/vendor/modernizr.js' %}"></script>
+</head>
+<body>
+  {% if at_homepage %}
+  <div class="row full-width">
+    <header class="header large-12 columns">
+      <div class="row">
+        <div class="large-12 logo-overlay  columns"><a  alt="3 Digital Rock Studios" id="logo" style="cursor:default;">3 Digital Rock Studios</a></div>
+      </div>
+    </header>
+  </div>
+
+  <div class="videoWrapper">
+    <!-- I may or may not have stole this from PlayFight. Sowwy! www.playfight.com -->
+    <div class="main-title">
+          <div class="title-container">
+              <ul>
+                  <li class="t-current"><div class="wise-quotes">WE ARE INDIE ENTERTAINMENT</div></li>
+                  <li><div class="wise-quotes">WE MAKE MOVIES</div></li>
+                  <li><div class="wise-quotes">WE ARE AMAZING</div></li>
+                  <li><div class="wise-quotes">WE LOVE ORANGE SODA</div></li>
+                  <li><div class="wise-quotes">BUT THAT HAS NOTHING TO DO WITH ANYTHING</div></li>
+              </ul>
+        </div>
+      </div>
+      <!-- /lack-of-ethics -->
+      <div class="overlay-wrap video-toggle-wrap"><div><a id="video_toggle" class="hide-for-small-only" title="Toggle audio"></a></div></div>
+      <div class="overlay-wrap hinthint"><div><strong><a href="#primary-nav" data-scroll>Continue... &#9660;</a></strong></div></div>
+
+      <video id="video-bg" src="" class="video-js vjs-default-skin fill" width="1280" height="720" controls preload="auto" data-setup="" autoplay>
+          <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+      </video>
+  </div>
+  {% else %}
+    <header class="header large-12 columns">
+        <div class="row">
+          <div class="small-12 small-centered  columns"><a href="/" alt="3 Digital Rock Studios" id="logo">3 Digital Rock Studios</a></div>
+        </div>
+    </header>
+  {% endif %}
+
+    <nav id="primary-nav" class="nav-collapse">
+      <ul class="main-nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/about">About</a></li>
+        <li class="nav-item"><a href="/channels">Channel</a></li>
+        <li class="nav-item"><a href="https://squareup.com/store/iii-digital-rock-studios">Store</a></li>
+        <li class="nav-item"><a href="http://upload.3digitalrock.com">Upload</a></li>
+      </ul>
+    </nav>
+
+    <div class="row">
+      <article class="large-12 columns">
+            {% block content %}
+            {% endblock %}
+      </article>
+    </div>
+
+    <div class="row">
+      <footer class="footer large-12 columns">
+        <span class="contact-info">
+          <span class="contact-item">// <a href="mailto:info@3digitalrockstudios.com">info@3digitalrockstudio.com</a></span> <span class="contact-item">// 216.264.0098</span> <span class="contact-item">// <a href="https://facebook.com/3digitalrockstudios">facebook.com/3digitalrockstudios</a></span> <span class="contact-item">// <a href="https://youtube.com/3digitalrockstudios">youtube.com/3digitalrockstudios</a></span>
+        </span>
+      </footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    {% load compress %}{% compress js %}
+    <script src="{% static 'js/foundation.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'FitText.js/jquery.fittext.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'responsive-nav/responsive-nav.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'slick-carousel/slick/slick.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'smooth-scroll/dist/js/smooth-scroll.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'js/vendor/responsiveslides.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'js/vendor/qtip/jquery.qtip.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'js/vendor/qtip/imagesloaded.pkg.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'slick-carousel/slick/slick.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% endcompress %}
+
+    <script type="text/javascript">
+      $(document).foundation();
+      var nav = responsiveNav(".nav-collapse");
+      jQuery(".nav-item").fitText();
+      smoothScroll.init({
+        speed: 500,
+        easing: 'easeInOutCubic',
+        updateURL: false
+      });
+    </script>
+
+    <script src="{% static 'js/fill.js' %}" type="text/javascript" charset="utf-8"></script>
+
+    {% load compress %}{% compress js %}
+    <script src="{% static 'js/dist/vendor/video.dev.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-ga/dist/videojs.ga.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-persistvolume/videojs.persistvolume.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-seek/dist/videojs-seek.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'js/video-js-resolutions.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-vimeo/vjs.vimeo.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-youtube/dist/vjs.youtube.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-hotkeys/videojs.hotkeys.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-sharetools/videojs.sharetools.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'videojs-playlists/dist/videojs-playlists.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% endcompress %}
+
+    {% if at_homepage %}
+    <script type="text/javascript">
+      $(document).ready(function(){
+        videoFullscreen = true;
+        jQuery(".wise-quotes").fitText(2, {maxFontSize: '80px'});
+        /* Slider AutoChanging Title */
+        function loadTitleAnimated(){
+          var myInterval;
+          var contador = 1;
+          var myFunc = function() {
+            var cur = $('.main-title ul li').length;
+            if(cur == contador) {
+                $('.main-title ul li.t-current').removeClass('t-current');
+                $('.main-title ul li').first().addClass('t-current');
+                contador = 1;
+              } else {
+                contador++;
+                $('.main-title ul li.t-current').removeClass('t-current').next().addClass('t-current');
+              }
+          };
+          myInterval = setInterval(myFunc, 5000); // Set Animation Interval in Miliseconds
+        }
+        loadTitleAnimated();
+        
+        /* fullscreen toggle */
+        $("#video_toggle").click( function (){
+            videoFullscreen = !videoFullscreen;
+            $(".main-title").toggleClass("videoFullscreen");
+            $("#video-bg").toggleClass("videoFullscreen");
+            videojs("video-bg").muted(videoFullscreen);
+        });
+      });
+      /* video player setup and init */
+      var videos = [{% for trailer in trailers %}{"src": ["{{ trailer.files.mp4_low }}","{{ trailer.files.webm }}"], "poster": "{{ trailer.thumbnails.0 }}", "title": "{{ trailer.title }}"}{% if forloop.last != True %},{% endif %}{% endfor %}];
+      videojs("video-bg").ready(function(){
+        var myPlayer = this;
+        myPlayer.ga();
+        myPlayer.muted(true);
+        myPlayer.playList(videos, {
+          getVideoSource: function(vid, cb) {
+            cb(vid.src, vid.poster);
+          }
+        });
+        myPlayer.on('lastVideoEnded', function(e){
+          myPlayer.playList(0);
+          myPlayer.play();
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+  			$('#mc-embedded-subscribe-form').submit(function(e) {
+  				$( ".alert-box .close" ).trigger( "click" );
+  				var $this = $(this);
+  				$.ajax({
+  					type: "GET", // GET & url for json slightly different
+  					url: "https://3digitalrockstudios.us6.list-manage.com/subscribe/post-json?c=?",
+  					data: $this.serialize(),
+  					dataType    : 'json',
+  					contentType: "application/json; charset=utf-8",
+  					error       : function(err) { alert("Could not connect to the registration server. Please try again soon."); },
+  					success     : function(data) {
+  						if (data.result != "success") {
+  							data.msg=data.msg.slice(4);
+  							var alertBox = '<div data-alert class="alert-box alert"><strong>'+data.msg+' </strong> <a href="#" class="close">&times;</a></div>';
+  							setTimeout(function() {
+  								  $("#alert").append(alertBox).foundation("alert", undefined);
+  							}, 300);
+  						} else {
+  							var alertBox = '<div data-alert class="alert-box success"><strong>'+data.msg+' </strong></div>';
+  							$("#alert").append(alertBox).foundation("alert", undefined);
+  							$("#mc-embedded-subscribe-form").remove();
+  						}
+  					}
+  				});
+  				return false;
+  			});
+      });
+    </script>
+    {% endif %}
+    
+    {% block footerScripts %}{% endblock %}
+</body>
+</html>
