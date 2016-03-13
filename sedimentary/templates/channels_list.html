@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for channel in channels %}
+  <h2 class="channel_title">{{channel.name}}</h2>
+  <div class="channel_listing">
+    {% for video in channel.videos %}
+    <div class="listing_item">
+      <div class="vid_thumbnail_wrap">
+        <a href="/watch/{{video.uid}}/{{video.slug}}"><div class="img_round"><img class="vid_thumbnail vid_thumbnail_{{video.uid}}" alt="{{video.title}}" title="{{video.title}}" data-uid="{{video.uid}}" src="{% if video.thumbnails.3 %}{{ video.thumbnails.3 }}{% else %}{{ video.thumbnails.0 }}{% endif %}" /></div></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+{% endblock %}
+
+{% block footerScripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.channel_listing').slick({
+    dots: false,
+    infinite: false,
+    slidesToShow: 5,
+    slidesToScroll: 4
+  });
+});
+</script>
+{% endblock %}

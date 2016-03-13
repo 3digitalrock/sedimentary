@@ -1,0 +1,37 @@
+/* Since imports not at the beginning of the minified file breaks the imports */
+@import url('//fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('//fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+/* Custom Icon Font
+--------------------------------------------------------------------------------
+The control icons are from a custom font. Each icon corresponds to a character
+(e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
+*/
+@font-face {
+  font-family: 'VideoJS';
+  src: url('/static/fonts/vjs.eot');
+  src: url('/static/fonts/vjs.eot?#iefix') format('embedded-opentype'), url('/static/fonts/vjs.woff') format('woff'), url('/static/fonts/vjs.ttf') format('truetype'), url('/static/fonts/vjs.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'VideoJS-Resolutions';
+  src: url('/static/fonts/VideoJS-Resolutions.eot');
+  src: url('/static/fonts/VideoJS-Resolutions.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/VideoJS-Resolutions.woff') format('woff'),
+  url('/static/fonts/VideoJS-Resolutions.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "responsivenav";
+  src:url("/static/fonts/responsivenav.eot");
+  src:url("/static/fonts/responsivenav.eot?#iefix") format("embedded-opentype"),
+    url("/static/fonts/responsivenav.ttf") format("truetype"),
+    url("/static/fonts/responsivenav.woff") format("woff"),
+    url("/static/fonts/responsivenav.svg#responsivenav") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
